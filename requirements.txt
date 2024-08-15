@@ -1,0 +1,17 @@
+#site base projeto: https://www.dio.me/articles/analisando-conversas-de-whatsapp-gerando-graficos
+#repositorio git: git clone https://github.com/me15degrees/count-messages-for-whatsapp.git
+
+
+# comando executar projeto: python nomeArquivo_projeto.py
+
+#instalando um a um
+#pip install pandas matplotlib openpyxl
+#pip install matplotlib
+#pip install pandas
+#pip install openpyxl
+
+#instalando todos
+pip install pandas matplotlib openpyxl
+
+# use esse comando no terminal: pip install -r requirements.txt
+

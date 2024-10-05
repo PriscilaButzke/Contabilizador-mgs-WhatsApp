@@ -9,9 +9,10 @@
 #pip install matplotlib
 #pip install pandas
 #pip install openpyxl
+#pip install flask
 
 #instalando todos
-pip install pandas matplotlib openpyxl
+pip install pandas matplotlib openpyxl flask
 
 # use esse comando no terminal: pip install -r requirements.txt
 

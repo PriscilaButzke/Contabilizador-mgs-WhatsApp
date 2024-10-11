@@ -98,31 +98,3 @@ def process_chat(filename, group_name, start, end, max_users):
 
     for bar in bars:
         yval = bar.get_height()
-        ax.text(bar.get_x() + bar.get_width()/2, yval + 0.1, round(yval, 1), ha='center', va='bottom')
-
-    # Salvar o gráfico
-    output_filename = f"{group_name}_{start.replace('/', '')}_{end.replace('/', '')}.png"
-    output_path = os.path.join(app.config['UPLOAD_FOLDER'], output_filename)
-    plt.savefig(output_path)
-
-    # Links para os arquivos gerados
-    graph_url = url_for('download_file', filename=output_filename)
-
-    # Salvar o Excel
-    excel_filename = f"{group_name}_contagem_mensagens.xlsx"
-    excel_path = os.path.join(app.config['UPLOAD_FOLDER'], excel_filename)
-    df.to_excel(excel_path, index=False)
-
-    excel_url = url_for('download_file', filename=excel_filename)
-
-    return graph_url, excel_url
-
-# Rota para download de arquivos
-@app.route('/download/<filename>')
-def download_file(filename):
-    return send_file(os.path.join(app.config['UPLOAD_FOLDER'], filename), as_attachment=True)
-
-if __name__ == '__main__':
-    if not os.path.exists(UPLOAD_FOLDER):
-        os.makedirs(UPLOAD_FOLDER)
-    app.run(debug=True)
